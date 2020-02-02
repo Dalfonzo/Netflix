@@ -1,0 +1,21 @@
+<--Librerias-->
+npm i react-router-dom
+npm i styled-components
+
+
+<----- Componentes ------->
+import { NavLink } from 'react-router-dom'
+<NavLink to="/"></NavLink>
+
+import { Switch,Route } from 'react-router-dom'    (App.js)
+
+<Switch>
+    <Route path="/" component ={Main}/>
+</Switch>
+
+import { BrowserRouter as Router} from 'react-router-dom' (index.js)
+
+<Router>
+    <App /> 
+</Router>,
+document.getElementById('root')
