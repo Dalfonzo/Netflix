@@ -11,6 +11,12 @@ export default class Header extends Component {
                     <Logo src={logo} alt=""/>
                     <NavLink to="/" className="singIn-btn">Sing In</NavLink>
                 </div>
+                {/* Header Content */}
+                <div className="header-content">
+                    <Title>See What's next.</Title>
+                    <h2>WATCH ANYWHERE. CANCEL ANYTIME.</h2>
+                    <button>Try it now</button>
+                </div>
             </HeaderComponent>
         )
     }
@@ -56,4 +62,12 @@ const HeaderComponent = styled.div`
         height: 10rem;    
         z-index:1;
     }
+`;
+
+// Main title
+const Title = styled.h1`
+    margin: 0 0 1.2rem;
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1.1rem;
 `;
