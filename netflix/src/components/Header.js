@@ -14,7 +14,7 @@ export default class Header extends Component {
                 {/* Header Content */}
                 <div className="header-content">
                     <Title>See What's next.</Title>
-                    <h2>WATCH ANYWHERE. CANCEL ANYTIME.</h2>
+                    <Subtitle>WATCH ANYWHERE. CANCEL ANYTIME.</Subtitle>
                     <button>Try it now</button>
                 </div>
             </HeaderComponent>
@@ -69,5 +69,15 @@ const Title = styled.h1`
     margin: 0 0 1.2rem;
     font-size: 5rem;
     font-weight: 700;
-    line-height: 1.1rem;
+    line-height: 1.1em;
+`;
+
+//Subtitle
+
+const Subtitle = styled.h2 `
+    font-weight: 400;
+    font-size: 1.875rem;
+    line-height: 1.25em;
+    margin: 0 0 1.875rem;
+    text-transform: uppercase;
 `;
