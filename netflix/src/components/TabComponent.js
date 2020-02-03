@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import { Tab, Tabs, TabList } from "react-tabs";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import TabDoor from "./tabs_nav/TabDoor";
 import TabDevices from "./tabs_nav/TabDevices";
 import TabPrices from "./tabs_nav/TabPrices";
+import TabContentOne from "./TabContentOne";
+import TabContentTwo from "./TabContentTwo";
 import "../css/TabsNav.css";
 
 export default class TabComponent extends Component {
@@ -58,6 +60,14 @@ export default class TabComponent extends Component {
                             </p>
                         </Tab>
                     </TabList>
+
+                    {/* TabsContent */}
+                    <TabPanel>
+                        <TabContentOne />
+                    </TabPanel>
+                    <TabPanel>
+                        <TabContentTwo />
+                    </TabPanel>
                 </Tabs>
             </div>
         );
