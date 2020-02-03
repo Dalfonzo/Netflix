@@ -2,6 +2,8 @@
 npm i react-router-dom
 npm i styled-components
 
+react icons kit
+
 
 <----- Componentes ------->
 import { NavLink } from 'react-router-dom'
@@ -19,3 +21,4 @@ import { BrowserRouter as Router} from 'react-router-dom' (index.js)
     <App /> 
 </Router>,
 document.getElementById('root')
+

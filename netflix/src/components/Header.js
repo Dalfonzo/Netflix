@@ -11,7 +11,7 @@ export default class Header extends Component {
             <HeaderComponent className="header-container">
                 <div className="header-top">
                     <Logo src={logo} alt=""/>
-                    <NavLink to="/" className="singIn-btn">Sing In</NavLink>
+                    <NavLink to="/" className="signIn-btn">Sign In</NavLink>
                 </div>
                 {/* Header Content */}
                 <div className="header-content">
@@ -41,7 +41,7 @@ const Logo = styled.img`
 // Header Container
 
 const HeaderComponent = styled.div`
-    .singIn-btn{
+    .signIn-btn{
         right: 0 ;
         margin: 1.123rem 3% 0;
         padding: 0.4375rem 1.0625rem;
