@@ -4,6 +4,7 @@ import { Button } from "./Button";
 import { Icon } from "react-icons-kit";
 import { cross } from "react-icons-kit/icomoon/cross";
 import { checkmark } from "react-icons-kit/icomoon/checkmark";
+import { generateMedia } from "styled-media-query";
 
 export default function TabContentThree() {
     return (
@@ -111,6 +112,17 @@ export default function TabContentThree() {
     );
 }
 
+const customMedia = generateMedia({
+    lgDesktop: "1350px",
+    mdDesktop: "1200px",
+    desktop: "1030px",
+    tablet: "960px",
+    smTablet: "740px",
+    xsmTable: "620px",
+    phone: "520px",
+    mdPhone: "425px"
+});
+
 //Main Container
 const TabContainer = styled.div`
     background: var(--margin-deep-dark);
@@ -118,6 +130,14 @@ const TabContainer = styled.div`
     .tab-content {
         margin: 0 15%;
         padding-bottom: 1%;
+        ${customMedia.lessThan("smTablet")`
+        margin: 0 7%;
+
+    `}
+        ${customMedia.lessThan("phone")`
+        margin: 0 auto;
+
+    `}
     }
 
     .tab-top-content {
@@ -127,13 +147,23 @@ const TabContainer = styled.div`
     }
 
     span {
-        grid-column: 3 / 9;
+        grid-column: 1 / 9;
+        ${customMedia.lessThan("xsmTable")`
+        font-size:1rem !important;
+
+    `}
     }
 
     .btn {
-        grid-column: 9 / 12;
-        margin-left: 3rem;
-        margin-right: 5.1rem;
+        grid-column: 10 / -1;
+        ${customMedia.lessThan("smTablet")`
+        grid-column: 9 / -1;
+        height: 60%;
+    `}
+        ${customMedia.lessThan("xsmTable")`
+        height: 90%;
+
+    `}
     }
 
     /* Tab Bottom Content */
@@ -151,6 +181,10 @@ const TabContainer = styled.div`
     table thead th {
         text-transform: uppercase;
         padding: 0.8rem;
+        ${customMedia.lessThan("xsmTable")`
+        font-size:0.8rem !important;
+
+    `}
     }
 
     table tbody {
@@ -163,6 +197,10 @@ const TabContainer = styled.div`
         color: #999;
         padding: 0.8rem 1.2rem;
         text-align: center;
+        ${customMedia.lessThan("xsmTable")`
+        font-size:0.8rem !important;
+
+    `}
     }
     table tbody tr td:first-child {
         text-align: left;

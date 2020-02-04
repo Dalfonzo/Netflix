@@ -4,6 +4,7 @@ import styled from "styled-components";
 import ImgTv from "../images/tab-tv.png";
 import ImgTablet from "../images/tab-tablet.png";
 import ImgMacBook from "../images/tab-macbook.png";
+import { generateMedia } from "styled-media-query";
 
 export default function TabContentTwo() {
     return (
@@ -66,11 +67,26 @@ export default function TabContentTwo() {
     );
 }
 
+const customMedia = generateMedia({
+    lgDesktop: "1350px",
+    mdDesktop: "1200px",
+    desktop: "1030px",
+    tablet: "960px",
+    smTablet: "740px",
+    xsmTable: "620px",
+    phone: "520px",
+    mdPhone: "425px"
+});
+
 // MAin Tab Content Container
 const TabContainer = styled.div`
     background: var(--main-deep-dark);
     .tab-content {
-        margin: 0 15%;
+        margin: 0 2rem;
+        ${customMedia.lessThan("desktop")`
+        margin: 0 auto;
+
+    `}
     }
 
     /* Tab Top content */
@@ -84,19 +100,30 @@ const TabContainer = styled.div`
 
     span {
         grid-column: 1 / 8;
+        ${customMedia.lessThan("desktop")`
+        margin-left: 1rem;
+        grid-column: 1 / 9 ;
+        font-size: 1.25rem !important;
+    `}
     }
     .btn {
         margin: 0 1.25rem;
         grid-column: 10 / -1;
+        ${customMedia.lessThan("tablet")`
+        grid-column: 9 / -1;
+    `}
     }
 
     /* Tab Bottom */
     .tab-bottom-content {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         grid-gap: 2rem;
         text-align: center;
         margin-top: 2rem;
+        ${customMedia.lessThan("desktop")`
+           margin: 0 2rem;
+    `}
     }
 
     h3 {
