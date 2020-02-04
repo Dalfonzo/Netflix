@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import logo from "../svg/logo.svg";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom"; //{ NavLink,Link }
 import styled from "styled-components";
 import { Icon } from "react-icons-kit";
 import { Button } from "./Button";

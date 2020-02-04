@@ -67,7 +67,7 @@ export default function TabContentThree() {
                             </tr>
                             <tr>
                                 <td>
-                                    Watch on your laptop, TV, phone and tablet{" "}
+                                    Watch on your laptop, TV, phone and tablet
                                 </td>
                                 <td>
                                     <Icon icon={checkmark} size={10} />
