@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import FBlogo from "../../images/fb-logo.png";
 
 export default class LoginForm extends Component {
     render() {
@@ -28,7 +29,7 @@ export default class LoginForm extends Component {
                         <div className="input-container">
                             <Button type="submit">Sign In</Button>
                         </div>
-                        <label classNAme="checkbox-container">
+                        <label className="checkbox-container">
                             Remember me
                             <input type="checkbox" checked />
                             <span className="checkmark"></span>
@@ -36,6 +37,20 @@ export default class LoginForm extends Component {
                         <Link to="/" className="need-help">
                             Need Help?
                         </Link>
+                        <div className="bottom-form">
+                            <img src={FBlogo} alt="" />
+                            <Link to="/" className="login-fb-text">
+                                Login with Facebook
+                            </Link>
+                            <br />
+                            <br />
+                            <span style={{ color: "#999" }}>
+                                New to Netflix?
+                            </span>
+                            <Link to="/" className="sign-up-text">
+                                Sign up now
+                            </Link>
+                        </div>
                     </form>
                 </div>
             </FormContainer>
@@ -93,6 +108,74 @@ const FormContainer = styled.div`
 
     input:focus {
         outline: none;
+    }
+
+    /* Checkbox */
+    .checkbox-container {
+        margin-left: 0.75rem;
+        padding-left: 1.875rem;
+        position: relative;
+        font-size: 0.9rem;
+        color: #999;
+        cursor: pointer;
+    }
+    .checkbox-container input {
+        display: none;
+    }
+
+    .checkbox-container .checkmark {
+        display: inline-block;
+        background: #454545;
+        width: 1.1rem;
+        height: 1.1rem;
+        left: 0;
+        top: 0;
+        border-radius: 0.1rem;
+        position: absolute;
+    }
+    .checkbox-container input:checked + .checkmark:after {
+        content: "";
+        position: absolute;
+        height: 0.25rem;
+        width: 0.625rem;
+        border-left: 2px solid #000;
+        border-bottom: 2px solid #000;
+        top: 25%;
+        left: 21%;
+        transform: rotate(-45deg);
+    }
+
+    .need-help {
+        text-decoration: none;
+        color: #828282;
+        margin-left: 4.6rem;
+        font-size: 0.9rem;
+    }
+
+    /* Bottom form */
+    .bottom-form img {
+        width: 1.5625rem;
+        margin: 0.625rem 0.625rem -0.4375rem 0;
+    }
+
+    .login-fb-text {
+        color: #828282;
+        font-size: 0.9rem;
+    }
+
+    .bottom-form {
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 4rem;
+    }
+
+    .sign-up-text {
+        font-size: 1.1rem;
+        color: #fff;
+        margin-left: 1rem;
+        &:hover {
+            text-decoration: underline;
+        }
     }
 `;
 
