@@ -14,7 +14,7 @@ export default class Header extends Component {
             <HeaderComponent className="header-container">
                 <div className="header-top">
                     <Logo src={logo} alt="" />
-                    <NavLink to="/" className="signIn-btn">
+                    <NavLink to="/login" className="signIn-btn">
                         Sign In
                     </NavLink>
                 </div>
