@@ -4,6 +4,8 @@ import styled from "styled-components";
 import { Icon } from "react-icons-kit";
 import { iosWorld } from "react-icons-kit/ionicons/iosWorld/";
 import { ic_keyboard_arrow_down } from "react-icons-kit/md/ic_keyboard_arrow_down";
+import { generateMedia } from "styled-media-query";
+
 export default class Footer extends Component {
     state = {
         langContent: false
@@ -101,11 +103,29 @@ export default class Footer extends Component {
     }
 }
 
+const customMedia = generateMedia({
+    lgDesktop: "1350px",
+    mdDesktop: "1200px",
+    desktop: "1030px",
+    tablet: "960px",
+    smTablet: "740px",
+    xsmTable: "620px",
+    phone: "520px",
+    mdPhone: "425px"
+});
+
 const FooterContainer = styled.footer`
     background: var(--main-deep-dark);
     padding-top: 10rem;
     padding-bottom: 3rem;
     color: #999;
+
+    span{
+        ${customMedia.lessThan("phone")`
+        margin-left: 5% !important;
+        font-size:1rem !important;
+    `}
+    }
 
     .footer-columns {
         width: 70%;
@@ -114,6 +134,15 @@ const FooterContainer = styled.footer`
         overflow: auto;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
+        ${customMedia.lessThan("desktop")`
+        width: 100%;
+    `}
+        ${customMedia.lessThan("tablet")`
+        font-size: 0.7rem;
+    `}
+    ${customMedia.lessThan("smTablet")`
+        grid-template-columns: repeat(2, 1fr);
+    `}
     }
 
     ul li {

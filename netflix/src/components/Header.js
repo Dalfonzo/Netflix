@@ -38,7 +38,7 @@ export default class Header extends Component {
 
 const customMedia = generateMedia({
     lgDesktop: "1350px",
-    mdDesktop: "1150px",
+    mdDesktop: "1200px",
     desktop: "1030px",
     tablet: "960px",
     smTablet: "740px",
