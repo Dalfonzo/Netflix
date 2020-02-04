@@ -161,5 +161,3 @@ const FooterContainer = styled.footer`
         }
     }
 `;
-
-// https://youtu.be/Ku5w51ov7X8?t=1441

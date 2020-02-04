@@ -5,6 +5,8 @@ import styled from "styled-components";
 import { Icon } from "react-icons-kit";
 import { Button } from "./Button";
 import { ic_keyboard_arrow_right } from "react-icons-kit/md/ic_keyboard_arrow_right";
+// Media Query
+import { generateMedia } from "styled-media-query";
 
 export default class Header extends Component {
     render() {
@@ -34,6 +36,17 @@ export default class Header extends Component {
     }
 }
 
+const customMedia = generateMedia({
+    lgDesktop: "1350px",
+    mdDesktop: "1150px",
+    desktop: "1030px",
+    tablet: "960px",
+    smTablet: "740px",
+    xsmTable: "620px",
+    phone: "520px",
+    mdPhone: "425px"
+});
+
 // Logo
 const Logo = styled.img`
     width: 10rem;
@@ -42,6 +55,15 @@ const Logo = styled.img`
     top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
+    ${customMedia.lessThan("tablet")`
+        left:20%;
+    `}
+    ${customMedia.lessThan("xsmTable")`
+        margin-left: 20px;
+    `}
+    ${customMedia.lessThan("mdPhone")`
+        width: 8rem;
+    `}
 `;
 
 // Header Container
@@ -64,6 +86,17 @@ const HeaderComponent = styled.div`
         &:hover {
             background: var(--main-red-hover);
         }
+
+        ${customMedia.lessThan("tablet")`
+        right: 5%;
+    `}
+
+        ${customMedia.lessThan("smTablet")`
+        margin-top:1.25rem;
+    `}
+        ${customMedia.lessThan("mdPhone")`
+        font-size: 0.8rem;
+    `}
     }
 
     /* header Top */
@@ -85,11 +118,39 @@ const HeaderComponent = styled.div`
         text-align: center;
         flex-direction: column;
         z-index: 1;
+        ${customMedia.lessThan("xsmTable")`
+        width: 95%;
+    `};
     }
 
     .Icon svg {
         vertical-align: bottom;
         margin-left: 1.5rem;
+        ${customMedia.lessThan("lgDesktop")`
+            display: none !important;
+        `}
+    }
+
+    .main-offer-btn {
+        ${customMedia.lessThan("lgDesktop")`
+        margin: 0 33%;
+        font-size:1.5rem;
+    `};
+        ${customMedia.lessThan("mdDesktop")`
+        margin: 0 33% ;
+        font-size:1.3rem;
+    `};
+        ${customMedia.lessThan("tablet")`
+        margin: 0 20%;
+        font-size:1.3rem;
+    `};
+        ${customMedia.lessThan("xsmTable")`
+        margin: auto;
+        font-size:1.3rem;
+    `};
+        ${customMedia.lessThan("mdPhone")`
+        font-size: 1rem;
+    `}
     }
 `;
 
@@ -99,6 +160,15 @@ const Title = styled.h1`
     font-size: 5rem;
     font-weight: 700;
     line-height: 1.1em;
+    ${customMedia.lessThan("desktop")`
+        font-size: 4rem;
+    `}
+    ${customMedia.lessThan("tablet")`
+        font-size: 3rem;
+    `};
+    ${customMedia.lessThan("mdPhone")`
+        font-size: 2rem;
+    `}
 `;
 
 //Subtitle
@@ -109,4 +179,13 @@ const Subtitle = styled.h2`
     line-height: 1.25em;
     margin: 0 0 1.875rem;
     text-transform: uppercase;
+    ${customMedia.lessThan("desktop")`
+        font-size: 1.4rem;
+    `}
+    ${customMedia.lessThan("tablet")`
+        font-size: 1rem;
+    `};
+    ${customMedia.lessThan("mdPhone")`
+        font-size: 0.8rem;
+    `}
 `;
