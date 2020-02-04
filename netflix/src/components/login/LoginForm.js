@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export default class LoginForm extends Component {
     render() {
@@ -25,10 +26,16 @@ export default class LoginForm extends Component {
                             <label>Password</label>
                         </div>
                         <div className="input-container">
-                            <a href="#" type="submit">
-                                Sign In
-                            </a>
+                            <Button type="submit">Sign In</Button>
                         </div>
+                        <label classNAme="checkbox-container">
+                            Remember me
+                            <input type="checkbox" checked />
+                            <span className="checkmark"></span>
+                        </label>
+                        <Link to="/" className="need-help">
+                            Need Help?
+                        </Link>
                     </form>
                 </div>
             </FormContainer>
@@ -90,3 +97,18 @@ const FormContainer = styled.div`
 `;
 
 // Button
+const Button = styled.button`
+    color: #fff;
+    background: rgba(229, 9, 20);
+    border: none;
+    outline: none;
+    padding: 0.8rem 1.3rem;
+    border-radius: 0.125rem;
+    font-size: 1rem;
+    text-align: center;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
+    transition: opacity 0.2s ease-in;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 1rem 0;
+`;
